@@ -1,38 +1,14 @@
 ---
-import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
-const findings = (await getCollection('findings')).sort(
-  (a, b) => b.data.published.valueOf() - a.data.published.valueOf()
-);
 ---
-<Base title="Zack Tickman — Security research" description="Independent security researcher. Credited across Apple's 26.4 security releases, including CVE-2026-28895.">
-  <div class="wrap">
-    <h1 class="lede">I find authentication bypasses in software people trust with their credentials.</h1>
-
+<Base title="Zack Tickman" description="Zack Tickman — Chicago.">
+  <div class="wrap about">
+    <h1 class="lede">Zack Tickman</h1>
     <p class="intro">
-      Independent security researcher in Chicago. My work concentrates on one class of defect:
-      places where a system presents an authentication requirement and then fails to enforce it.
+      Based in Chicago. Interested in security, markets, and music.
     </p>
-
-    <ul class="credentials">
-      <li>Credited across Apple's 26.4 security release — iOS and iPadOS, macOS Tahoe, tvOS, watchOS, visionOS. Eleven credits over six advisories, including <a href="https://support.apple.com/en-us/126792">CVE-2026-28895</a>, a Stolen Device Protection bypass.</li>
-      <li>Credited in <a href="https://support.apple.com/en-us/125632">iOS 26.1</a> from the prior release cycle.</li>
-      <li>Phantom Wallet — High severity authentication bypass in their iOS application. Paid and patched.</li>
-      <li>Perplexity — bounty paid, invited to their private program.</li>
-      <li>Security work with Cake Wallet and Monero.com.</li>
-      <li>SEC Crypto Task Force — December 2025 submission on privacy coin risk architecture.</li>
-    </ul>
-
-    <h2 class="section-label">Latest findings</h2>
-    {findings.map((f) => (
-      <a class="entry" href={`/findings/${f.id}/`}>
-        <span class="entry-line">
-          <span class:list={['dot', f.data.status === 'fixed' ? 'dot--settled' : 'dot--live']}></span>
-          {f.data.number} · {f.data.vendor} · {f.data.statusNote}
-        </span>
-        <h3 class="entry-title">{f.data.title}</h3>
-        <p class="entry-dek">{f.data.dek}</p>
-      </a>
-    ))}
+    <p class="intro">
+      <a href="https://x.com/zacktickman">X</a> · <a href="mailto:zack@zacktickman.com">Email</a>
+    </p>
   </div>
 </Base>
