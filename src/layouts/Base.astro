@@ -17,32 +17,11 @@ const { title, description } = Astro.props;
   <meta name="description" content={description} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:type" content="article" />
+  <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@zacktickman" />
-  <link rel="alternate" type="application/rss+xml" title="Findings" href="/rss.xml" />
 </head>
 <body>
-  <header class="masthead">
-    <div class="wrap">
-      <a class="wordmark" href="/"><b>Zack Tickman</b></a>
-      <nav>
-        <a href="/findings/">Findings</a>
-        <a href="https://x.com/zacktickman" rel="me">X</a>
-        <a href="mailto:security@zacktickman.com">Contact</a>
-      </nav>
-    </div>
-  </header>
-
   <main><slot /></main>
-
-  <footer class="colophon">
-    <div class="wrap" style="display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;padding-inline:0;">
-      <span>security@zacktickman.com</span>
-      <a href="/.well-known/security.txt">security.txt</a>
-      <a href="/rss.xml">RSS</a>
-      <span>Coordinated disclosure, 90-day default.</span>
-    </div>
-  </footer>
 </body>
 </html>
